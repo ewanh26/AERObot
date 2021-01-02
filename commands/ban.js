@@ -1,6 +1,6 @@
 module.exports = {
     name: 'ban',
-    usage: 'a!ban @member <reason>',
+    usage: 'a!ban @member <reason (optional) >',
     desc: 'Bans member from the server.',
     execute(message, args, DISCORD) {
         let eligible = message.member.permissions.has('BAN_MEMBERS');

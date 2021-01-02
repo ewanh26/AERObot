@@ -2,7 +2,7 @@ const ms = require('ms');
 
 module.exports = {
     name: 'mute',
-    usage: 'a!mute @member <time>s/m/h/...',
+    usage: 'a!mute @member <time (optional) > s/m/h/...',
     desc: 'This mutes a member; adds them to the \'Muted\' role, for a specified amount of time. Mutes until manually unmuted by defualt. specify time in s/m/h',
     execute(message, args, DISCORD) {
         const member = message.mentions.users.first();
