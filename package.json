@@ -1,0 +1,16 @@
+{
+  "name": "aerobot",
+  "version": "1.0.0",
+  "description": "Discord bot from AERO AI, made with JavaScript. Powered by Node.js runtime and the Discord.js module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ewan Hallatt",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "ms": "^2.1.3",
+    "pm2": "^4.5.1"
+  }
+}
