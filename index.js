@@ -68,7 +68,7 @@ client.on('message', message => {
 client.on('guildMemberAdd', guildMember => {
     let welcomeRole = guildMember.guild.roles.cache.find(r => r.name === 'Member');
     guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('794519988820115476').send(`Welcome, ${guildMember}!`);
+    guildMember.guild.channels.cache.get('786722960080633889').send(`Welcome, ${guildMember}!`);
 });
 
 client.login(process.env.token);
