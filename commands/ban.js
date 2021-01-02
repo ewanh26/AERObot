@@ -1,11 +1,12 @@
 module.exports = {
     name: 'ban',
-    usage: 'a!ban @member',
+    usage: 'a!ban @member <reason>',
     desc: 'Bans member from the server.',
     execute(message, args, DISCORD) {
         let eligible = message.member.permissions.has('BAN_MEMBERS');
         const member = message.mentions.users.first();
         const member_ = message.mentions.members.first();
+        const targetIsAdmin = member_.roles.cache.some(r => r.name === 'Admin');
         const embed_BAN = new DISCORD.MessageEmbed()
             .setColor('#FFCE00')
             .setTitle('Ban')
@@ -25,8 +26,12 @@ module.exports = {
 
             const memberID = message.guild.members.cache.get(member.id);
 
-            if (!member_.roles.cache.some(r => r.name === 'Admin')) {
-                memberID.ban();
+            if (!targetIsAdmin) {
+                if (args[1]) {
+                    memberID.ban(args[1]);
+                } else {
+                    memberID.ban();
+                }
                 message.channel.send(embed_BAN);
             } else {
                 message.channel.send('You cannot ban Admins');

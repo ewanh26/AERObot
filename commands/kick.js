@@ -6,6 +6,7 @@ module.exports = {
         let eligible = message.member.permissions.has('KICK_MEMBERS');
         const member = message.mentions.users.first();
         const member_ = message.mentions.members.first();
+        const targetIsAdmin = member_.roles.cache.some(r => r.name === 'Admin');
         const embed_KICK = new DISCORD.MessageEmbed()
             .setColor('#EF1414')
             .setTitle('Kick')
@@ -25,7 +26,7 @@ module.exports = {
 
             const memberID = message.guild.members.cache.get(member.id);
 
-            if (!member_.roles.cache.some(r => r.name === 'Admin')) {
+            if (!targetIsAdmin) {
                 memberID.kick();
                 message.channel.send(embed_KICK)
             } else {
