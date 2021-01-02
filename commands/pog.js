@@ -1,5 +1,6 @@
 module.exports = {
     name: 'pog',
+    usage: 'a!pog',
     desc: 'pogchamp',
     execute(message, args) {
         message.channel.send(
