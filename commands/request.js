@@ -12,7 +12,7 @@ module.exports = {
         .setImage('https://media1.tenor.com/images/49c81401a7a05013aeed8e8edb0875e0/tenor.gif?itemid=3561207');
 
         if (!args[1]) {
-            message.channel.send('Please enter a request');
+            message.channel.send('Please enter a valid request. Must be at least one word.');
         } else {
             message.channel.send(requestEmbed);
             requestChannel.send(`Request from ${message.author.toString()}: ${args.slice(0, args.length).join(' ')}`);
