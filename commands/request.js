@@ -5,7 +5,7 @@ module.exports = {
     execute(message, args, DISCORD, client) {
         const server = client.guilds.cache.get('786722960080633886');
         const requestChannel = server.channels.cache.get('796767132628942860');
-        const requestEmbed = DISCORD.MessageEmbed()
+        const requestEmbed = new DISCORD.MessageEmbed()
         .setColor('#3377AA')
         .setTitle('Request sent!')
         .setDescription('The Admins will get back to you soon!')
