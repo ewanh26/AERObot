@@ -28,7 +28,7 @@ module.exports = {
 
             if (!targetIsAdmin) {
                 if (args[1]) {
-                    memberID.ban(args.slice(1, args.length).join(' '));
+                    memberID.ban(args.slice(0, args.length).join(' '));
                 } else {
                     memberID.ban();
                 }

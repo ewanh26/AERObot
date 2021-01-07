@@ -9,7 +9,7 @@ module.exports = {
         if (!args[1]) {
             message.channel.send('Please enter a request');
         } else {
-            requestChannel.send(`Request from ${message.author.toString()}: ${args.slice(1, args.length)}`)
+            requestChannel.send(`Request from ${message.author.toString()}: ${args.slice(0, args.length).join(' ')}`)
         }
     }
 }
