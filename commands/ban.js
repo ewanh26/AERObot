@@ -27,8 +27,8 @@ module.exports = {
             const memberID = message.guild.members.cache.get(member.id);
 
             if (!targetIsAdmin) {
-                if (args.slice(1, args.length)) {
-                    memberID.ban(args[1]);
+                if (args[1]) {
+                    memberID.ban(args.slice(1, args.length).join(' '));
                 } else {
                     memberID.ban();
                 }
