@@ -62,8 +62,10 @@ client.on('message', message => {
             break;
         case 'pog':
             client.commands.get('pog').execute(message, args);
+            break;
         case 'request':
             client.commands.get('request').execute(message, args, DISCORD, client);
+            break;
     };
 });
 
