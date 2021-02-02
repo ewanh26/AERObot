@@ -15,10 +15,8 @@ module.exports = {
             }
 
             if (isNaN(args[0]) || args[0] < 1) return message.reply('Please enter a real, positive number.')
-            
-            let limit = args[0] + 1;
 
-            await message.channel.messages.fetch({ limit: limit }).then(messages => {
+            await message.channel.messages.fetch({ limit: args[0] }).then(messages => {
                 message.channel.bulkDelete(messages);
             });
         } else {
