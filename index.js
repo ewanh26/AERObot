@@ -66,6 +66,9 @@ client.on('message', message => {
         case 'request':
             client.commands.get('request').execute(message, args, DISCORD, client);
             break;
+        case 'uwu':
+            client.commands.get('uwu').execute(message, args);
+            break;
     };
 });
 
