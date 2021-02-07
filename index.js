@@ -78,5 +78,8 @@ client.on('guildMemberAdd', guildMember => {
     guildMember.guild.channels.cache.get('786722960080633889').send(`Welcome, ${guildMember}!`);
 });
 
-client.login(process.env.token);
+client.on('messageDelete', message => {
+    message.channel.send('deleted message? sus')
+})
 
+client.login(process.env.token);
