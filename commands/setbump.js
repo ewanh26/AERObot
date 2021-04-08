@@ -4,7 +4,7 @@ module.exports = {
   desc: "Bumps every 120 minutes in the channel you used this command in",
   execute(message, DISCORD) {
     const bumpChannel = message.channel;
-    const embed_BUMP = DISCORD.MessageEmbed()
+    const embed_BUMP = new DISCORD.MessageEmbed()
       .setColor("#5efcff")
       .setTitle("Will bump here!");
     const eligible = message.author.roles.cache.some((r) => r.name === "Admin");
