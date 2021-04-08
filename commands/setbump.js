@@ -6,7 +6,8 @@ module.exports = {
     const bumpChannel = message.channel;
     const embed_BUMP = new DISCORD.MessageEmbed()
       .setColor("#5efcff")
-      .setTitle("Will bump here!");
+      .setTitle("Will bump here!")
+      .setDescription("bump");
     const eligible = message.author.roles.cache.some((r) => r.name === "Admin");
 
     if (eligible) {
