@@ -77,7 +77,8 @@ client.on("message", (message) => {
       client.commands.get("uwu").execute(message, args);
       break;
     case "setbump":
-      client.commands.get("setbump").execute(message, DISCORD);
+      client.commands.get("setbump").execute(message, args, DISCORD);
+      break;
   }
 });
 

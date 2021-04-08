@@ -2,7 +2,7 @@ module.exports = {
   name: "setbump",
   usage: "a!setbump",
   desc: "Bumps every 120 minutes in the channel you used this command in",
-  execute(message, DISCORD) {
+  execute(message, args, DISCORD) {
     const bumpChannel = message.channel;
     const embed_BUMP = new DISCORD.MessageEmbed()
       .setColor("#5efcff")
