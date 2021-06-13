@@ -7,7 +7,7 @@ const client = new DISCORD.Client({
 });
 client.commands = new DISCORD.Collection();
 
-const commandFiles = FS.readdirSync("./commands").filter((file) =>
+const commandFiles = FS.readdirSync("./commands").filter(file =>
   file.endsWith(".js")
 );
 for (let file of commandFiles) {
@@ -26,7 +26,7 @@ client.once("ready", () => {
   client.user.setActivity("type a!help", { type: "PLAYING" });
 });
 
-client.on("message", (message) => {
+client.on("message", message => {
   if (message.mentions.has(client.user))
     message.channel.send(
       "Hi, I'm AERO. type `a!help` if you're confused.\nMy prefix here is `a!`"
@@ -82,9 +82,9 @@ client.on("message", (message) => {
   }
 });
 
-client.on("guildMemberAdd", (guildMember) => {
+client.on("guildMemberAdd", guildMember => {
   let welcomeRole = guildMember.guild.roles.cache.find(
-    (r) => r.name === "Member"
+    r => r.name === "Member"
   );
   guildMember.roles.add(welcomeRole);
   guildMember.guild.channels.cache
@@ -92,8 +92,14 @@ client.on("guildMemberAdd", (guildMember) => {
     .send(`Welcome, ${guildMember}!`);
 });
 
-client.on("messageDelete", (message) => {
+client.on("messageDelete", message => {
   message.channel.send("deleted message? sus");
+});
+
+client.on("guildMemberRemove", guildMember => {
+  guildMember.guild.channels.cache
+    .get("786722960080633889")
+    .send(`${guildMember} has departed!`);
 });
 
 client.login(process.env.token);
